@@ -13,6 +13,10 @@ UCLASS()
 class SIMPLESHOOTER_API AMyPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 	
 public:
 
@@ -25,6 +29,9 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class UUserWidget> LoseScreenClass;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class UUserWidget> SpawnUIClass;
 
 	UPROPERTY(EditAnywhere)
 	float RestartDelay = 5.f;

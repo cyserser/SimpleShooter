@@ -4,6 +4,17 @@
 #include "MyPlayerController.h"
 #include "Blueprint/UserWidget.h"
 
+
+// Called when the game starts or when spawned
+void AMyPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+	
+    UUserWidget* SpawnUI = CreateWidget(this, SpawnUIClass);
+    SpawnUI->AddToViewport();
+        
+}
+
 void AMyPlayerController::GameHasEnded(class AActor *EndGameFocus, bool bIsWinner)
 {
     Super::GameHasEnded(EndGameFocus, bIsWinner);
